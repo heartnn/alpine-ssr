@@ -1,22 +1,23 @@
 FROM alpine:3.5
 RUN apk --no-cache add python libsodium unzip
 
-RUN cd / \
-    && wget https://github.com/breakwa11/shadowsocks/archive/manyuser.zip -O /tmp/manyuser.zip \
+RUN mkdir /ssr
+    cd /ssr \
+    && wget --no-check-certificate https://github.com/breakwa11/shadowsocks/archive/manyuser.zip -O /tmp/manyuser.zip \
     && unzip -d /tmp /tmp/manyuser.zip \
-    && mv /tmp/shadowsocks-manyuser/shadowsocks / \
+    && mv /tmp/shadowsocks-manyuser/shadowsocks /ssr \
     && rm -rf /tmp/*
     
-ADD dns.conf /shadowsocks/dns.conf
-ADD config.json /shadowsocks/config.json
-ADD start.sh /shadowsocks/start.sh
+ADD dns.conf /ssr/shadowsocks/dns.conf
+ADD config.json /ssr/shadowsocks/config.json
+ADD start.sh /ssr/shadowsocks/start.sh
 
-RUN chmod +x /shadowsocks/start.sh
+RUN chmod +x /ssr/shadowsocks/start.sh
 
-WORKDIR /shadowsocks
+WORKDIR /ssr/shadowsocks
 
-CMD /shadowsocks/start.sh
+CMD /ssr/shadowsocks/start.sh
 
 EXPOSE 8388/tcp 8388/udp
 
-ENTRYPOINT ["/shadowsocks/start.sh"]
+ENTRYPOINT ["/ssr/shadowsocks/start.sh"]
