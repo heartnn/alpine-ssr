@@ -10,14 +10,3 @@ RUN cd / \
     
 ADD dns.conf /shadowsocks/dns.conf
 ADD config.json /shadowsocks/config.json
-ADD start.sh /shadowsocks/start.sh
-
-RUN chmod +x /shadowsocks/start.sh
-
-WORKDIR /shadowsocks
-
-CMD /shadowsocks/start.sh
-
-EXPOSE 8388/tcp 8388/udp
-
-ENTRYPOINT ["/shadowsocks/start.sh"]
