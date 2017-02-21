@@ -5,7 +5,7 @@ RUN apk --no-cache add python libsodium unzip openssl ca-certificates \
 RUN cd / \
     && wget https://github.com/breakwa11/shadowsocks/archive/manyuser.zip -O /tmp/manyuser.zip \
     && unzip -d /tmp /tmp/manyuser.zip \
-    && mv /tmp/shadowsocks-manyuser/shadowsocks /shadowsocks \
+    && mv /tmp/shadowsocksr-manyuser/shadowsocks / \
     && rm -rf /tmp/*
     
 ADD dns.conf /shadowsocks/dns.conf
