@@ -1,0 +1,18 @@
+{
+    "server": "0.0.0.0",
+    "server_port": 8388,
+    "local_address": "127.0.0.1",
+    "local_port": 1080,
+    "password": "Arukas",
+    "timeout": 120,
+    "udp_timeout": 60,
+    "method":"chacha20",
+    "protocol": "auth_aes128_sha1",
+    "protocol_param": "",
+    "obfs": "http_simple",
+    "obfs_param": "",
+    "dns_ipv6": false,
+    "connect_verbose_info": 0,
+    "redirect": "cdn.aliyun.com",
+    "fast_open": true
+}
