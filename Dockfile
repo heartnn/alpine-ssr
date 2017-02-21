@@ -19,4 +19,4 @@ CMD /shadowsocks/start.sh
 
 EXPOSE 8388/tcp 8388/udp
 
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["/shadowsocks/start.sh"]
