@@ -1,5 +1,5 @@
 FROM alpine:3.5
-RUN apk --no-cache add python libsodium unzip ca-certificates \
+RUN apk --no-cache add python libsodium unzip openssl ca-certificates \
     && update-ca-certificates
 
 RUN cd / \
